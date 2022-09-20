@@ -2,17 +2,17 @@ import { Response } from "express";
 
 export type MockResponse<TResult> = Response & {
     state: { 
-        status?: number,
+        status?: number
         json?: TResult | unknown
      }
 }
 
-export function mockResponse<TResult>(){
+export function makeMockResponse<TResult>(){
     const response = {
         state: {}
     } as MockResponse<TResult>;
 
-    response.status = (status:number) => {
+    response.status = (status: number) => {
         response.state.status = status
         return response
     }
@@ -21,4 +21,7 @@ export function mockResponse<TResult>(){
         response.state.json = json
         return response
     }
+    
+    return response
 }
+
