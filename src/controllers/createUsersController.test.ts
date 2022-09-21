@@ -11,7 +11,7 @@ describe('CreateUserController', () => {
 
     })
 
-    afterAll(async()=>{
+    afterAll(async() => {
         const connection = getConnection()
         await connection.query('DELETE FROM usuarios')
         await connection.close()

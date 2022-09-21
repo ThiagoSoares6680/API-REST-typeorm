@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 import { v4 as uuid } from 'uuid';
-import { CreateUserService } from './services/CreateUsersServices';
+import { CreateUserService } from '../services/CreateUsersServices';
 
 
 class CreateUsersController{
