@@ -1,5 +1,6 @@
 import { getConnection } from "typeorm";
 import createConnection  from '../database'
+import {v4 as uuid} from 'uuid'
 import { CreateUserService } from "./CreateUsersServices";
 
 describe('CreateUserService', () =>{
@@ -18,7 +19,14 @@ describe('CreateUserService', () =>{
         const createUserService = new CreateUserService();
 
         const result = await createUserService.execute({
-            id:'',
+            id: uuid(),
+            nome: 'Algum nome',
+            email: 'email@usuario.com',
+            idade: 25
         })
+
+        console.log(result)
+
+        expect(result).toHaveProperty('id')
     })
 })

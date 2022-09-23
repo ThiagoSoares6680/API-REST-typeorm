@@ -26,7 +26,6 @@ class CreateUserService {
             ])
             .execute() 
         
-        console.log(usuarios)
         return usuarios.identifiers[0]
     }
 }
