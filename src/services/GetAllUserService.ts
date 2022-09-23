@@ -2,7 +2,8 @@ import { getRepository } from 'typeorm'
 import { Usuarios } from '../entities/Usuario'
 
 class GetAllUserService{
-    static async execute(){
+    static execute: any
+    async execute(){
         const usuarios = await getRepository(Usuarios)
             .createQueryBuilder('usuarios')
             .select()

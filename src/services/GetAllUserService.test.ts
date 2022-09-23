@@ -1,9 +1,8 @@
-import { query } from "express";
 import { getConnection } from "typeorm";
 import  createConnection  from "../database";
-import { v4 as uuid } from 'uuid'
 import { GetAllUserService } from './GetAllUserService';
-import { CreateUserService } from './CreateUsersServices'
+import { FakeData } from '../utils/fakeData/fakeData'
+
 
 describe('GetAllUserService', () => {
     beforeAll(async() => {
@@ -16,23 +15,12 @@ describe('GetAllUserService', () => {
         await connection.close()
     })
 
+    const fakeData = new FakeData()
+
 
     it('Deve retornar todos os usuarios cadastrados', async()=>{
-        const createUserService = new CreateUserService()
-
-        await createUserService.execute({
-            id: uuid(),
-            nome: 'algum usuario',
-            email: 'algumusuario@gmail.com',
-            idade: 25
-        })
-    
-        await createUserService.execute({
-            id: uuid(),
-            nome: 'outro usuario',
-            email: '',
-            idade: 25
-        })
+        
+        await fakeData.execute()
 
         const expectedResponse = [
             {
