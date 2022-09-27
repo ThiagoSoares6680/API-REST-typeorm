@@ -1,8 +1,7 @@
 import { getRepository } from 'typeorm'
-import { Usuarios } from '../entities/Usuario'
+import { Usuarios } from '../entities/Usuarios'
 
 class GetAllUserService{
-    static execute: any
     async execute(){
         const usuarios = await getRepository(Usuarios)
             .createQueryBuilder('usuarios')

@@ -37,7 +37,7 @@ describe('GetAllUserService', () => {
 
         const getAllUserService = new GetAllUserService();
 
-        const result = await GetAllUserService.execute();
+        const result = await getAllUserService.execute();
 
         expect(result).toMatchObject(expectedResponse)
     })

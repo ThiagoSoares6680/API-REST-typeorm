@@ -1,5 +1,5 @@
 import { createQueryBuilder, getConnection, getRepository } from "typeorm"
-import { Usuarios } from "../entities/Usuario"
+import { Usuarios } from "../entities/Usuarios"
 
 
 interface IUsuarios {
